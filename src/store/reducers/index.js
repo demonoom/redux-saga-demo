@@ -1,4 +1,14 @@
 export function deReducer(state = {}, action) {
-    console.log('reducer');
-    return state
+    switch (action.type) {
+        case 'LOGIN_SUCCESS':
+            return {
+                ...state,
+                userInfo: action.res
+            }
+        default:
+            return {
+                ...state,
+                ...action
+            }
+    }
 }
